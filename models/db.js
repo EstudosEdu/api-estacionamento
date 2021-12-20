@@ -20,7 +20,7 @@ class ConnectionDB
   {
     const Table = db.define(tableUsuarios.nome, tableUsuarios.table, tableUsuarios.options)
     return Table;
-    // return await Table.sync({force: true}) /*forçar a criação da tabela */
+    //return await Table.sync({force: true}) /*forçar a criação da tabela*/
   }
 
   async create(dado1, dado2, dado3, dado4, dado5){
@@ -52,7 +52,7 @@ class ConnectionDB
     up.Funcionario = dado4; 
     up.Vaga = dado5;    
     up.save();
-
+    
     return true;
   }
 
