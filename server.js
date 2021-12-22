@@ -31,5 +31,11 @@ app.post('/delete', async(req, res) => {
   await db.Delete(id);
 });
 
+app.get('/criaTabela', async (req, res) => {
+  await db.criaModeloTable();
+  res.send('bem vindo a rota de criação de tabela');
+})
 
-app.listen(8001, () => console.log('servidor rodando em http://localhost:8001'));
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT);

@@ -18,11 +18,17 @@ class ConnectionDB
     )
   }
 
-  async modelTable(db)
+  async modelTable( db )
   {
     const Table = db.define(tableUsuarios.nome, tableUsuarios.table, tableUsuarios.options)
     return Table;
-    //return await Table.sync({force: true}) /*forçar a criação da tabela*/
+    return await Table.sync({force: true}) /*forçar a criação da tabela*/
+  }
+
+  async criaModeloTable()
+  {
+    const Table = thisdb.define(tableUsuarios.nome, tableUsuarios.table, tableUsuarios.options)
+    return await Table.sync({force: true}) /*forçar a criação da tabela*/
   }
 
   async create(dado1, dado2, dado3, dado4, dado5){
