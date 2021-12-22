@@ -1,16 +1,18 @@
 const Sequelize = require('sequelize');
 const tableUsuarios = require('./models.js');
+require('dotenv').config();
 
 class ConnectionDB
 {
   constructor()
   {
     this.db = new Sequelize(
-      'estacionamento',
-      'root2',
-      '1234',
+      process.env.API_DATABASE,
+      process.env.API_USER,
+      process.env.API_PASSWORD,
       {
-        host: 'localhost',
+        host: process.env.API_HOST,
+        port: process.env.API_PORT,
         dialect: 'mysql'
       }
     )
